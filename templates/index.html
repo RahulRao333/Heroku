@@ -1,0 +1,27 @@
+<html>
+<body>
+   <h1>
+       Stroke Prediction System
+
+   </h1>
+      <form action="{{url_for('predict')}}" method="post">
+          <input type="text" name="gender" placeholder="male=1,female=0" required="required"/>
+          <input type="text" name="age" placeholder="Age" required="required"/>
+          <input type="text" name="hypertension" placeholder="Blood pressure" required="required"/>
+          <input type="text" name="heart_disease" placeholder="Heart problem" required="required"/>
+          <input type="text" name="ever_married"  placeholder="yes(married)=1 no(not married)=0" required="required"/>
+          <input type="text" name="work_type" placeholder="Private=2,self_employed=3 " required="required"/>
+          <input type="text" name="Residence_type" placeholder="URBAN=1 RURAL=0">
+          <input type="text" name="avg_glucose_level" placeholder="Sugar" required="required"/>
+          <input type="text" name="bmi" placeholder="Body mass" required="required"/>
+          <input type="text" name="smoking_status" placeholder=" non smoker=0 smokes=1">
+
+
+          <button type="submit">Predict</button>
+      </form>
+
+    <br>
+    <br>
+    {{prediction_text}}
+</body>
+</html>
