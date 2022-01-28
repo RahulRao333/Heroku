@@ -26,11 +26,14 @@ def predict():
     int_features=[int(x) for x in request.form.values()]
     final_features=[np.array(int_features)]
     prediction=model.predict(final_features)
+        if prediction == [0]:
+        return render_template('index.html',prediction_text='You are Healthy')
+    else:
+        return render_template('index.html',prediction_text="You may suffer a Stroke")
 
 
 
-    output = prediction
 
-    return render_template('index.html',prediction_text='The result of stroke prediction system is {}'.format(output))
+  
 if __name__ == '__main__':
     app.run(debug=True)
