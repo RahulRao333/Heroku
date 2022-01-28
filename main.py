@@ -26,10 +26,10 @@ def predict():
     int_features=[int(x) for x in request.form.values()]
     final_features=[np.array(int_features)]
     prediction=model.predict(final_features)
-    if prediction[0] == 0:
-        return render_template('index.html',prediction_text='You are Healthy')
+    if prediction[0] == 1:
+        return render_template('index.html',prediction_text='You may suffer a Stroke')
     else:
-        return render_template('index.html',prediction_text="You may suffer a Stroke")
+        return render_template('index.html',prediction_text="You are Healthy")
 
 
 
