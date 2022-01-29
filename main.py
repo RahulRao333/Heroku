@@ -27,10 +27,10 @@ def predict():
     final_features=[np.array(int_features)]
     prediction=model.predict(final_features)
     output=prediction
-    if output[0] == 1:
-        return render_template('index.html',prediction_text='You may suffer a Stroke')
-    else:
-        return render_template('index.html',prediction_text="You are Healthy")
+    if output ==1:
+        return render_template('index.html',prediction_text='You may suffer stroke')
+    if output==0:
+        return render_template('index.html',prediction_text='You are healthy')
 
 
 
