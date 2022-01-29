@@ -27,10 +27,7 @@ def predict():
     final_features=[np.array(int_features)]
     prediction=model.predict(final_features)
     output=prediction
-    if output ==1:
-        return render_template('index.html',prediction_text='You may suffer stroke')
-    if output==0:
-        return render_template('index.html',prediction_text='You are healthy')
+    return render_template('index.html',prediction_text='[0] represents Healthy ,[1] represents possibility of stroke {}'.format(output)
 
 
 
